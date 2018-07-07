@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+    <style>
+        .to {
+            margin-top: 10%;
+        }
+        
+        .on {
+            background-color: chartreuse;
+        }
+        
+        .two {
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container to">
+        <div class="row on">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h4>Your shares :: <span style="border-bottom:1px solid" id="mon"> 6% </span> </h4>
+            <br>
+
+        </div>
+
+        <hr>
+        <div class="row two">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h4>Total downloads by your refid : <span id="down">......</span> </h4>
+        </div>
+        <hr>
+        <div class="row ">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h4>Total app usage time by you : <span id="timm">....</span></h4>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <div class="card">
+                <div class="card-header">
+                    Hey! We cool?
+                </div>
+                <div class="card-body">
+                    "Your shares immulates when you and your downloads use the app for more time"
+                </div>
+                <div class="card-footer">
+                    CEO Dheshoju Kalyan Kumar
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            window.onload = function() {
+                startme();
+            };
+
+            function startme() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        var result = this.responseText;
+                        document.getElementById("down").innerText = result;
+
+                    }
+                };
+                xmlhttp.open("GET", "down.php", true);
+                xmlhttp.send();
+            }
+        </script>
+</body>
+
+</html>
