@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".splashscreen"
+    android:background="@drawable/asdf">
+
+  <LinearLayout
+      android:alpha="0.8"
+      android:id="@+id/linearLayout5"
+      android:layout_width="347dp"
+      android:layout_height="40dp"
+      android:layout_marginTop="16dp"
+      android:background="#ef6147"
+      android:elevation="1dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.513"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:textColor="#00030c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="What is it like to have a soulmate who takes care of you like her own son?"
+        android:textSize="15sp" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/linearLayout3"
+      android:layout_width="wrap_content"
+      android:layout_height="231dp"
+      android:layout_marginBottom="8dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:alpha="0.75"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+    <ImageView
+        android:scaleType="fitCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EB8C63"
+        android:elevation="4dp"
+        android:src="@drawable/front" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:alpha="0.7"
+      android:id="@+id/linearLayout6"
+      android:layout_width="390dp"
+      android:layout_height="66dp"
+      android:layout_marginBottom="52dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:background="#e8853e"
+      android:elevation="5dp"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:textColor="#00030c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20sp"
+        android:layout_marginLeft="58sp"
+        android:layout_marginTop="20sp"
+        android:text="Envy this love, once and forever"
+        android:textSize="20sp" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/linearLayout4"
+      android:layout_width="384dp"
+      android:layout_height="99dp"
+      android:layout_marginBottom="24dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="#f97b36"></LinearLayout>
+
+    <android.widget.LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="395dp">
+
+
+      <Button
+          android:textColor="#AAB7B8"
+          android:id="@+id/go"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="10dp"
+          android:alpha="0.8"
+          android:background="@drawable/round3"
+          android:elevation="14dp"
+          android:padding="20dp"
+          android:text="Experiece admirance   ------->"
+          android:textAllCaps="false" />
+
+
+    </android.widget.LinearLayout>
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="#e4ef47">
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

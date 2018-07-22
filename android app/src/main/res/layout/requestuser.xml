@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+
+   xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="#d0d6e0"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#b6ede4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:elevation="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text=" The only way you support this author is by turning on your mobile data and letting few ads show up
+
+    Sorry this might annoy you but thats the only way possible right now to support this author"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:elevation="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16dp"
+                android:background="#f2041b"
+                android:text="Please connect to mobile data or wifi to continue reading the book"/>
+            <Button
+                android:elevation="8dp"
+                android:id="@+id/ok"
+                android:background="#f44207"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Ok, I accept to continue"/>
+
+        </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reading"
+    android:background="#78E57D">
+
+    <WebView
+        android:id="@+id/webtest"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </WebView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/loadme"
+        android:elevation="8dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:text="Read now"
+        android:background="@drawable/round3"
+        android:textAllCaps="false"
+        android:padding="50dp"
+        android:layout_marginLeft="190dp"
+        />
+    <android.support.v7.widget.Toolbar
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:elevation="10dp"
+            android:background="@mipmap/back"
+            android:layout_width="40dp"
+            android:alpha="0.5"
+            android:layout_height="40dp"
+            android:id="@+id/back" />
+        <Button
+            android:elevation="10dp"
+            android:layout_marginLeft="495dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="40dp"
+            android:alpha="0.5"
+            android:layout_height="40dp"
+            android:id="@+id/next"
+            android:background="@mipmap/next"/>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:alpha="0.78"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:text="                                           I wanna be just like me, and be less like you!"/>
+    </LinearLayout>
+</FrameLayout>

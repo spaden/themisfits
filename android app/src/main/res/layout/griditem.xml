@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="6dp"
+    android:alpha="0.75"
+    android:background="@drawable/round3"
+    android:layout_marginBottom="30dp"
+    android:layout_height="127dp">
+
+    <TextView
+        android:id="@+id/text1"
+        android:textSize="20dp"
+        android:textColor="#F4F6F7"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Testing grid"/>
+    <Button
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:id="@+id/read"
+        android:text="Read --"/>
+</LinearLayout>

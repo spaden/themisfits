@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#EAEDED"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chaplist">
+
+    <ImageView
+        android:alpha="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/asdf" />
+     <TextView
+         android:background="@drawable/round2"
+         android:alpha="0.49"
+         android:textColor="#17202A"
+     android:padding="20dp"
+     android:layout_marginLeft="20dp"
+     android:layout_marginRight="20dp"
+     android:layout_marginTop="40dp"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:textSize="20dp"
+     android:text="  'Lets be like a tripod baby, let's push each other incase anyone of us is confronted with life issues'"/>
+
+
+        <ScrollView
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+
+               android:background="#F9EBEA"
+                android:orientation="vertical"
+                android:alpha="0.99"
+                android:layout_marginTop="190dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+             <LinearLayout
+                 android:layout_marginTop="20dp"
+                 android:layout_marginLeft="20dp"
+                 android:layout_marginRight="20dp"
+                 android:elevation="4dp"
+                 android:orientation="vertical"
+                 android:background="@drawable/round"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+                 <TextView
+                     android:textColor="#17202A"
+                     android:layout_marginTop="20dp"
+                     android:layout_marginLeft="60dp"
+                     android:layout_marginRight="100dp"
+                     android:layout_marginBottom="1dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:padding="4dp"
+                     android:textSize="20dp"
+                     android:text="Last read chapter "/>
+                 <TextView
+                     android:textColor="#17202A"
+                     android:textSize="20dp"
+                     android:layout_marginBottom="15dp"
+                     android:layout_marginLeft="45dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Would you like to continue?"/>
+                 <ImageButton
+                     android:elevation="8dp"
+                     android:id="@+id/ltread"
+                     android:layout_marginLeft="145dp"
+                     android:background="@color/colorPrimary"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="15dp"
+                     android:src="@mipmap/list"/>
+
+             </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:elevation="4dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#17202A"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginRight="100dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textSize="20dp"
+                        android:text="Select chapters...."/>
+                    <TextView
+                        android:textColor="#17202A"
+
+                        android:textSize="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Make sure that you don't miss any part of the story"/>
+                    <ImageButton
+                        android:id="@+id/schap"
+                        android:elevation="8dp"
+                        android:layout_marginLeft="145dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:src="@mipmap/list"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/round"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#17202A"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginRight="100dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textSize="20dp"
+                        android:text="Select chapters...."/>
+                    <TextView
+                        android:textColor="#17202A"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Make sure that you don't miss
+any part story"/>
+                    <ImageButton
+                        android:layout_marginLeft="145dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:src="@mipmap/list"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+</FrameLayout>
