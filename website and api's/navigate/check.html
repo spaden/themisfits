@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Newsfeed</title>
+    <style>
+        .testing {
+            margin-right: 25px;
+            margin-left: 20px;
+        }
+        
+        .thumb {
+            width: 10%;
+        }
+        
+        #hey {
+            margin-right: 25%;
+            margin-top: 3%;
+        }
+        
+        .nav-item {
+            margin-left: 10%;
+        }
+        
+        .navbar-nav {
+            align-items: right;
+        }
+        
+        .postt {
+            margin-top: 2%;
+        }
+        
+        .npostinterns {
+            box-shadow: 0 0 4px 1px #888888;
+        }
+        
+        #lkone {
+            height: 1.9em;
+            box-shadow: 0 0 1px 1px #888888;
+        }
+        
+        #dkone {
+            height: 1.9em;
+            box-shadow: 0 0 1px 1px #888888;
+        }
+        
+        #spaces {
+            width: 2em;
+            margin-left: 4em;
+        }
+        
+        #nwpt {
+            box-shadow: 0 3px 1px #888888;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center">
+        <a class="navbar-brand" href="#">theMisfits</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+        <span></span>
+        <span></span>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a id="appactivity" class="nav-link" href="#">app referrals</a>
+                </li>
+                <li class="nav-item">
+                    <a id="reffmoney" class="nav-link" href="#">book referrals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="log404">logout </a><span class="glyphicon glyphicon-user"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mailme" href="#">Mail</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Newsfeed</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Have some internet ettiquites before you post something up in here
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    Regards, theMisfits team....
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="hey">
+        <div class="row">
+            <span class="col-md-3 col-lg-3"></span>
+            <div class="col-md-7 col-lg-7">
+                <div class="newpost">
+                    <div class="form-group">
+                        <label for="comment">Post something!!</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <button id="nwpt" class="btn btn-primary postt" onclick="posmet();">Post</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <span class="col-md-3 col-lg-3"></span>
+            <div class="col-md-7 col-lg-7" id="hey1"></div>
+        </div>
+
+
+
+        <input type="button" style="display: none" class="btn btn-default" onclick="alert('hey');" title="hey" />
+        <button type="button" style="display: none" id="toggle" data-toggle="modal" data-target="#myModal">
+            Open modal
+          </button>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            var se12Tid, checktwo = 0;
+            window.onload = function() {
+                if (sessionStorage.getItem("se2test") == "first") {
+                    document.getElementById("toggle").click();
+                    sessionStorage.setItem("se2test", "second");
+                }
+                if (sessionStorage.getItem("se12Tid") != null) {
+                    se12Tid = sessionStorage.getItem("se12Tid");
+                    newtp();
+                } else {
+                    alert("Error logging in please log in again");
+                }
+                var log404 = document.getElementById("log404");
+                log404.onclick = function() {
+                    sessionStorage.removeItem("se12Tid");
+                    loadme("http://www.themisfits.in/navigate/login.html");
+                };
+                document.getElementById("mailme").onclick = function() {
+                    loadme("http://www.themisfits.in/navigate/mail.html");
+                };
+                var app = document.getElementById("appactivity");
+                app.onclick = function() {
+                    loadme("http://www.themisfits.in/navigate/appreff.html")
+                };
+                document.getElementById("reffmoney").onclick = function() {
+                    loadme("http://www.themisfits.in/navigate/refmoney.html");
+                };
+            };
+
+            function loadme(newloaction) {
+                window.location.href = newloaction;
+            }
+
+            function newtp() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+
+                        for (var i = 0; i < myObj.products.length; i++) {
+
+                            var ok = document.createElement('div');
+                            ok.className = "card npostinterns";
+                            var ok1 = document.createElement('div');
+                            ok1.className = "card-body";
+                            var y = document.createElement("span");
+                            var x = document.createElement("LABEL");
+                            x.innerHTML = myObj.products[i].likes;
+                            x.className = "testing";
+                            var x1 = document.createElement("LABEL");
+                            x1.innerHTML = myObj.products[i].dislikes;
+                            x1.className = "testing";
+                            var postBy = document.createElement("LABEL");
+                            postBy.innerHTML = "post by " + myObj.products[i].name;
+                            var dik = document.createElement("img");
+                            //dik.className = "btn btn-primary";
+                            //dik.innerHTML = "dislike";
+                            dik.id = "dkone";
+                            dik.value = myObj.products[i].id;
+                            dik.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJdSURBVGhD7Zg9SNVRGIdvH0RBEmU0hWkEQfSBZEs0iCQtNgRW0tJQW5TQEBHZEARGRNQgiEvR4lIRRDUoWO0uLiFFHxBFkQ7ZkJX1/M5Jsb/nXtF7zrn3wP+BB9/3Tr7n/M/Hewo5OTk5OTk55bMCj+J17PXgDWzHJRiNnTiK4/gIXf/YQr2H3/AJLkevrMTNGRvxE97GGvTJJvyIp0zmkX34x+FzXIohuIX3begP14zINRiKfuyxoT9q8YINZ9C0q5gQnMApPGQyj8QsZBf2oT7bSTyDXln17+802TwEmpHfqI3FCxr5Dzac4QW22DAoz/CKDf1QiRkRD/CaDcvHtUZisAMnsNlkHqhEIftRh6IO3Qb94ItYn9I0G/EgPsXPWI9l41rssdDNQRuLtmQvxJ6R2XTiiA3TRtvvYxumy178jm0mS5Td+BJ179IaUROXNHvwHV41WeIcRnWOZXWNW9DVlp7EWOiUVzO3wWSLxFWIujeN0FqMgW4WOuW9d6Sa4jd40WTFWY86UBerHji68Ad2YBBO4xcsdView2yvv1Bf4REMhgpQIaVeO1rxF25F14jP5zqMwiV8jcV2Ey1Ojapa2KpGa0CLvtT3qwvncRtWNzdx2IZOdE/Sk2rVU4c/8YDJ5hLksS0Ud3DQhnM4i6VmrKrYjrrc6aKXRa/r2t2S4T0es+F/aKG/tWEa6IbqKkS31gEbpkGxQrQ+LtswDVyFNKHWzjaTJUK2kGWoJ8+HJkuI2YWsxrv4FXXOJIUK0bPNEI6hdipvL+kxOY/dqIWt1rSSb2E5FaZQ+Avy7JVGrqHBmAAAAABJRU5ErkJggg==";
+                            var but = document.createElement("img");
+                            //but.className = "btn";
+                            but.id = "lkone";
+                            //but.innerHTML = "like";
+                            but.value = myObj.products[i].id;
+                            but.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAULSURBVGhDzZpdbBRVFMfX6IO+qBixMwtSVFCJDyai1Qc1MQqtBm0Fa2IoH2piYjTRRxIlRqPUl8aoTWUV96MESqupgrSlqTv33kVqtAUDMYHIizFGeSItUEAguZ4zvbQ7u/8ps7O7w57kl252z9zzP3Pv3HvuncaqZdvVrXZmJH532rGXM/yZvzM/16bt2L9oXsqx1qSF3UmMk/BT9FcjUsKeTDn2GPl/nsxaqxMj824yzVwd0zp2TcaxG0l0X1pY55HoYNC13EbWXsltmuajMb6Tacf6DQsLD/XSIbo5zSZM9YzHOQUbQSIqSUpYw0m5YKkJW1lLZuOv0DCYQoGrgzWVEnUbTfjyTYjYddTo1zhY9aHeSfT1xa41csJZ7+jCG6ih3ShAGHrFEn0i97b+V72lh+Uj0AfBGlKi/nojqzTju1DJJJgh0aAv5T52uaC26D3yfuiHYC2heqYaw8mRj88kwhxXL0M/P2j96TLyghld8CpqqFxGZaMnkcncu9BvTrLWeiNzbnPLiirNTsfkek8il3LtOiMWQF8/qDI40y0WLjFy/a2a68QptdmTyMncJuh3RRx7yMjFlpb28/DCCqDkE54kmCPqRegbiGz8OSPba1znVKPsYAbkA/ps7n1PEhdzW/S34l7oH5BxI91rNL01AeeyETRT/Zf7yJME84faAP1LggpNI3/WpqtY4FwG/WIZTOKiatffifvgNaVAN3+XkT9ttGreTDNVGaU45phaV5QEwys78i8VmpjObh+85UaThrv4vYAcy6FH3Em98SFM5LjaqHeKxb7Q9ArbRHjKfvqCd3bQMSxjchVMIghTuff0fvkkbLcIx/rMpOGu5GPQKSS8yE2qd6DI4LRTYfkwbD8fWiB/MWm4D7rvHjsMP8smIKx0eAii9vPhMwA3iZSYbyEHP7buqddf7F7sIfVjfOb3fbJBn1f42SiV39VLnth+dA/X3Rbblo3fg35EJPYu0m2rnymi65NGfVS26b/VGySgvUhQGLic+UYshToK4fqQh9Vy9CNi6w/1MJFtHWugmHI4QVN0twxYUFIONZsIc0CuhDqK4ERKGVpRJ8KTBtJRiDu0SnnYo0zkL/V64IXRfdinZy57EjkUEmUiB+QKqAEw4SbBFnRBjDKRf9SbUEMh3gUxYIkSZSK8FmXk7Prkj/WpScOc5UInL9El0h58aOXvFN0y3rHOQcc8/BL5sqMFiAnPYdkK4xdjTXnKeDYaa73YeRa/RBIdzVBQWIbkQzB+EY7VY+TPmvuuAznnEUUi59QHeoesh/ELSUp7hZE/a+7hg7AOogsu89Xg7Xpd69NFiXR0Nuif5FP6sGrVf6rX9Em1SV8AW9wrwUlk5aMwdiE80xrpxVbJ4yBezPrlMj0oHtSOfEyPqiZ9SLW44/+oWusWmcwRSv6gbHYPKXrkHbAtREbUrTKysdGGfhhdWGMMGLn+xseRPBuAi2sCGlKn09n5dxm5c1vGsTagRmoDq83IDGaUeRdu6KrSaeQFt2q86CmH0C962Ph1FzXwPWo4SlKO1R/61dtlMz2TQAEiojN0TyDjV8VUxpwBgaoCz07EWhO+ssbTHvXOPhS4wgwEnmLLMS6dKdh4QfBKMJ6U8WdNmOiM309QD+3iU3EgKhB8LbETFoBRG+8J6Plp4d1a2rF/JYEThYLzmODtqetLPVu0n6g145MN/scY99yM4M8zpx0Vt1jsfwApXfSpOvYLAAAAAElFTkSuQmCC";
+                            but.onclick = function() {
+                                sendlike(this.value);
+                            };
+                            dik.onclick = function() {
+                                senddislike(this.value);
+                            };
+
+                            ok1.innerText = myObj.products[i].post;
+                            ok.appendChild(ok1);
+                            ok.appendChild(document.createElement("br"));
+                            y.appendChild(x);
+                            // y.appendChild(document.createElement("LABEL"));
+                            // y.appendChild(document.createElement("p"));
+                            y.appendChild(but);
+                            y.appendChild(x1);
+                            y.appendChild(dik);
+                            var lab = document.createElement("LABEL");
+                            lab.id = "spaces";
+                            lab.innerHTML = "";
+                            y.appendChild(lab);
+                            y.appendChild(postBy);
+                            // y.appendChild(document.createElement("br"));
+                            ok.appendChild(y);
+                            // ok.appendChild(document.createElement("br"));
+
+                            document.getElementById("hey1").appendChild(ok);
+                            document.getElementById("hey1").appendChild(document.createElement("br"));
+
+                        }
+
+                    }
+                };
+                xmlhttp.open("GET", "http://www.themisfits.in/terror/what.php?data=newposts", true);
+                //xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                // xmlhttp.send("data=" + "newposts");
+                xmlhttp.send();
+            }
+
+            function sayhi(name) {
+                sendlike(name);
+            }
+
+            function posmet() {
+                var tht = document.getElementById("comment").value;
+                newpostsend(sessionStorage.getItem("se12Tid"), tht);
+                alert(tht);
+                location.reload();
+
+            }
+
+            function newpostsend(name, wht) {
+                var index = 0;
+                var cml = new Array();
+                if (window.XMLHttpRequest) {
+                    cml.push(new XMLHttpRequest());
+                    if (localStorage.getItem('indian') == null) {
+                        localStorage.setItem('indian', index);
+                        index++;
+                    } else {
+                        localStorage.setItem('indian', index);
+                    }
+
+                } else if (window.ActiveXObject) {
+                    cml.push(new ActiveXObject("Microsoft.CMLHTTP"));
+                }
+                var i = localStorage.getItem('indian');
+                cml[i].onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        location.reload();
+                        //newtp();
+                    }
+                };
+                cml[i].open("GET", "http://www.themisfits.in/terror/what.php?data=newwod&uname=" + name + "&upost=" + wht, true);
+                //cml[i].setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                //var x = 'data=' + 'newwod' + '&uname=' + name + '&upost=' + wht;
+                cml[i].send();
+
+            }
+
+            function sendlike(id) {
+                var index = 0;
+                var cml = new Array();
+                if (window.XMLHttpRequest) {
+                    cml.push(new XMLHttpRequest());
+                    if (localStorage.getItem('indian1') == null) {
+                        localStorage.setItem('indian1', index);
+                        index++;
+                    } else {
+                        localStorage.setItem('indian1', index);
+                    }
+
+                } else if (window.ActiveXObject) {
+                    cml.push(new ActiveXObject("Microsoft.CMLHTTP"));
+                }
+                var i = localStorage.getItem('indian1');
+                cml[i].onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert("like added");
+                        location.reload();
+                        //newtp();
+                    }
+                };
+                cml[i].open("GET", "http://www.themisfits.in/terror/what.php?data=like&id=" + id, true);
+                //cml[i].setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                //var x = 'data=' + 'like' + '&id=' + id;
+                cml[i].send();
+            }
+
+            function senddislike(id) {
+                var index = 0;
+                var cml = new Array();
+                if (window.XMLHttpRequest) {
+                    cml.push(new XMLHttpRequest());
+                    if (localStorage.getItem('indian2') == null) {
+                        localStorage.setItem('indian2', index);
+                        index++;
+                    } else {
+                        localStorage.setItem('indian2', index);
+                    }
+
+                } else if (window.ActiveXObject) {
+                    cml.push(new ActiveXObject("Microsoft.CMLHTTP"));
+                }
+                var i = localStorage.getItem('indian2');
+                cml[i].onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert("dislike added");
+                        location.reload();
+
+                    }
+                };
+                cml[i].open("GET", "http://www.themisfits.in/terror/what.php?data=dislike&id=" + id, true);
+                // cml[i].setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                //               var x = 'data=' + 'dislike' + '&id=' + id;
+                cml[i].send();
+            }
+        </script>
+
+
+</body>
+
+</html>

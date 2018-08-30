@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Android app book</title>
+    <style>
+        .to {
+            margin-top: 5%;
+        }
+        
+        .on {
+            background-color: chartreuse;
+        }
+        
+        .two {
+            background-color: burlywood;
+        }
+        
+        .thee {
+            background-color: #1ABC9C;
+        }
+        
+        .refrow {
+            background-color: #E59866;
+        }
+        
+        #rnumber {
+            font-size: 1.8em;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container to">
+        <div class="row on">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h4>Your shares :: <span style="border-bottom:1px solid" id="mon"> 6% </span> </h4>
+            <br>
+
+        </div>
+
+        <hr>
+        <div class="row two">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h4>Total downloads by your refid : <span id="down">......</span> </h4>
+        </div>
+        <hr>
+        <div class="row ">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h5>Total app usage time by you + your downloads: <span id="timm">....</span></h5>
+        </div>
+        <br>
+        <hr>
+        <div class="row thee">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h5>Your reffno to coerce your friends to download the app : <span id="rnumber">....</span></h5>
+        </div>
+        <hr>
+        <br>
+        <div class="row refrow">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <h5>Your book referal link to share : <span><a id="reflink" href="#"></a></span></h5>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            <span class="col-md-3 col-lg-3 col-sm-3"></span>
+            <div class="card">
+                <div class="card-header">
+                    Hey! We cool?
+                </div>
+                <div class="card-body">
+                    "Your shares immulates when you and your downloads use the app for more time"
+                </div>
+                <div class="card-footer">
+                    CEO Dheshoju Kalyan Kumar
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            window.onload = function() {
+                startme();
+                document.getElementById("reflink").href = "http://www.themisfits.in/terror/reff.php?ref23=" + sessionStorage.getItem("se12treffno");
+                document.getElementById("reflink").innerText = "http://www.themisfits.in/terror/reff.php?ref23=" + sessionStorage.getItem("se12treffno");
+            };
+
+            function startme() {
+                var cml;
+                if (window.XMLHttpRequest) {
+                    cml = new XMLHttpRequest();
+                } else if (window.ActiveXObject) {
+                    cml = new ActiveXObject("Microsoft.CMLHTTP");
+                }
+                var sum = 0;
+                cml.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var myObj = JSON.parse(this.responseText);
+                        sum += parseInt(myObj.reftime);
+                        sum += parseInt(myObj.itime);
+                        var min = sum / 1000 / 60;
+                        min = Math.floor(min);
+                        var r = min % 1;
+                        var sec = Math.floor(r * 60);
+                        if (sec < 10) {
+                            sec = '0' + sec;
+                        }
+                        document.getElementById("rnumber").innerText = "  " + sessionStorage.getItem("se12treffno");
+                        document.getElementById("down").innerText = myObj.total;
+                        document.getElementById("timm").innerText = min + ": min " + sec + ": sec";
+                        //sessionStorage.getItem("se12treffno"));
+                        //alert(myObj.total + " " + myObj.reftime + myObj.itime);
+                    }
+                };
+                cml.open("GET", "http://www.themisfits.in/terror/down.php?reffno=" + sessionStorage.getItem("se12treffno"), true);
+                //cml.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                //var x = 'reffno=' + sessionStorage.getItem("se12treffno");
+                cml.send();
+            }
+        </script>
+</body>
+
+</html>

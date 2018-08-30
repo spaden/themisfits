@@ -1,61 +1,70 @@
 <?php
-
-if($_REQUEST["data"]=="newposts") newtp();
-if($_REQUEST["data"]=="newwod") plus();
-if($_REQUEST["data"]=="like") likes();
-if($_REQUEST["data"]=="dislike") dislikes();
-
-function newtp(){
-    $conn = mysqli_connect("localhost","root","kalyan","testusers");    
-
-    $how="Select id,post,name,likes,dislikes,tellme from newsfeed order by tellme desc ";
-    $re2=mysqli_query($conn,$how);    
-    $response=array();
-    $response['products']=array();
-        while(list($id,$po,$na,$li,$di,$te)=$re2->fetch_row()){
-                     $product=array();
-                     $product['id']=$id;
-                     $product['post']=$po;
-                     $product['name']=$na;
-                     $product['likes']=$li;
-                     $product['dislikes']=$di;
-                     $product['timeline']=$te;
-                     array_push($response['products'],$product);
-        }
-        echo json_encode($response);
-        mysqli_close($conn);     
-}
-
-function plus(){
+class newsfeed {
+    private $conn,$how,$res;
+    public function __construct(){
+     $this->conn=mysqli_connect("localhost","misfit","misfitsstartup","testusers"); 
+    }
+    public function __destruct(){
+        mysqli_close($this->conn);
+    }
+    function newtp(){
+     
+        $this->how="Select id,post,name,likes,dislikes,tellme from newsfeed order by tellme desc";
+        $re2=mysqli_query($this->conn,$this->how);    
+        $response=array();
+        $response['products']=array();
+            while(list($id,$po,$na,$li,$di,$te)=$re2->fetch_row()){
+                         $product=array();
+                         $product['id']=$id;
+                         $product['post']=$po;
+                         $product['name']=$na;
+                         $product['likes']=$li;
+                         $product['dislikes']=$di;
+                         $product['timeline']=$te;
+                         array_push($response['products'],$product);
+            }
+            echo json_encode($response);
+            //mysqli_close($conn);     
+    }
+    function plus(){
     
-    $dt=date('Y-m-d H:i:s');
-    $npost=$_REQUEST["upost"];
-    $name=$_REQUEST["uname"];
-    $stmt = "INSERT INTO newsfeed (post,name, likes,dislikes,tellme) VALUES ('$npost','$name',0,0,'$dt')";
-    $conn = mysqli_connect("localhost","root","kalyan","testusers");    
-    $re2=mysqli_query($conn,$stmt);    
-    mysqli_close($conn);     
-    newtp(); 
-}
-function callme(){
-    $conn = mysqli_connect("localhost","root","kalyan","testusers");    
+        $dt=date('Y-m-d H:i:s');
+        $npost=$_REQUEST["upost"];
+        $name=$_REQUEST["uname"];
+        $this->how = "INSERT INTO newsfeed (post,name, likes,dislikes,tellme) VALUES ('$npost','$name',0,0,'$dt')";
+         
+        $this->res=mysqli_query($this->conn,$this->how);    
+        //mysqli_close($conn);     
+        newtp(); 
+    }
 
-    $q="DELETE * from newsfeed";
-    $re2=mysqli_query($conn,$q);    
-    mysqli_close($conn);     
-    newtp();
-}
-function likes(){
-    $conn = mysqli_connect("localhost","root","kalyan","testusers");
-    $who=$_REQUEST["id"];
-    $q="UPDATE  newsfeed set likes=likes+1 where id='$who'";
-    $re2=mysqli_query($conn,$q);
+    function likes(){
+        $who=$_REQUEST["id"];
+        $this->how="UPDATE  newsfeed set likes=likes+1 where id='$who'";
+        $this->res=mysqli_query($this->conn,$this->how);
+    
+    }
+
+    function dislikes(){
+        $who=$_REQUEST["id"];
+        $this->how="UPDATE  newsfeed set dislikes=dislikes+1 where id='$who'";
+        $re2=mysqli_query($this->conn,$this->how);
+    } 
 
 }
-function dislikes(){
-    $conn = mysqli_connect("localhost","root","kalyan","testusers");
-    $who=$_REQUEST["id"];
-    $q="UPDATE  newsfeed set dislikes=dislikes+1 where id='$who'";
-    $re2=mysqli_query($conn,$q);
-}
+$qume=new newsfeed();
+if($_REQUEST["data"]=="newposts"){
+  $qume->newtp();
+} 
+if($_REQUEST["data"]=="newwod") $qume->plus();
+if($_REQUEST["data"]=="like") $qume->likes();
+if($_REQUEST["data"]=="dislike") $qume->dislikes();
+
+
+
+
+
+
+
+
 ?>
