@@ -24,6 +24,7 @@ public class custfrag extends Fragment {
     private RecyclerView recyclerView;
     private customgird mAdapter;
     private storeme nvalue;
+    showads disAds;
     public void setmContext(Context mContext){
         this.mContext=mContext;
     }
@@ -39,6 +40,7 @@ public class custfrag extends Fragment {
 
          View v= inflater.inflate(R.layout.frag1,container,false);
          nvalue=new storeme(getContext());
+         disAds=new showads(getContext());
          List<String> testone=new ArrayList<>();
         for(int i=0;i<=44;i++){
             testone.add("Chapter "+i);
@@ -50,16 +52,24 @@ public class custfrag extends Fragment {
         mAdapter=new customgird(testone, getContext(), new customgird.Detailspoint() {
             @Override
             public void classonclick(View v, int position) {
-                show(position);
+                int i=disAds.showfragads();
+                if(i==1){
+                    show(position);
+                }else if(i==0) {
+                    disAds.showfragads();
+                    show(position);
+                }
             }
         });
         recyclerView.setAdapter(mAdapter);
+        disAds.displayAd();
         return  v;
     }
+
     public void show(int positon){
         //Toast.makeText(getContext(),"Clicked "+positon,Toast.LENGTH_SHORT).show();
         nvalue.putData(positon);
-        Toast.makeText(getContext()," "+nvalue.getData(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),"Selected Chapter "+nvalue.getData()+"You will enjoy this one for sure",Toast.LENGTH_SHORT).show();
         Intent i=Reading.setReading(getContext(),positon);
         startActivity(i);
     }

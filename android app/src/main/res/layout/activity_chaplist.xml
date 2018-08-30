@@ -14,10 +14,12 @@
         android:layout_height="210dp"
         android:scaleType="centerCrop"
         android:src="@drawable/asdf" />
-     <TextView
-         android:background="@drawable/round2"
-         android:alpha="0.49"
-         android:textColor="#17202A"
+
+
+    <TextView
+        android:background="@drawable/round2"
+        android:alpha="0.49"
+        android:textColor="#17202A"
      android:padding="20dp"
      android:layout_marginLeft="20dp"
      android:layout_marginRight="20dp"
@@ -47,7 +49,8 @@
                 android:layout_marginTop="190dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-             <LinearLayout
+
+                <LinearLayout
                  android:layout_marginTop="20dp"
                  android:layout_marginLeft="20dp"
                  android:layout_marginRight="20dp"
@@ -56,6 +59,7 @@
                  android:background="@drawable/round"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content">
+
                  <TextView
                      android:textColor="#17202A"
                      android:layout_marginTop="20dp"
@@ -65,20 +69,22 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
                      android:padding="4dp"
-                     android:textSize="20dp"
+                     android:textSize="14dp"
                      android:text="Last read chapter "/>
+
                  <TextView
                      android:textColor="#17202A"
-                     android:textSize="20dp"
+                     android:textSize="15dp"
                      android:layout_marginBottom="15dp"
-                     android:layout_marginLeft="45dp"
+                     android:layout_marginLeft="35dp"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Would you like to continue?"/>
+                     android:text="         Would you like to continue?"/>
+
                  <ImageButton
                      android:elevation="8dp"
                      android:id="@+id/ltread"
-                     android:layout_marginLeft="145dp"
+                     android:layout_marginLeft="115dp"
                      android:background="@color/colorPrimary"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
@@ -96,31 +102,34 @@
                     android:background="@drawable/round"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:textColor="#17202A"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="49dp"
                         android:layout_marginRight="100dp"
                         android:layout_marginBottom="1dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:textSize="20dp"
+                        android:textSize="14dp"
                         android:text="Select chapters...."/>
+
                     <TextView
                         android:textColor="#17202A"
 
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:layout_marginBottom="15dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Make sure that you don't miss any part of the story"/>
+
                     <ImageButton
                         android:id="@+id/schap"
                         android:elevation="8dp"
-                        android:layout_marginLeft="145dp"
+                        android:layout_marginLeft="110dp"
                         android:background="@color/colorPrimary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -137,6 +146,7 @@
                     android:background="@drawable/round"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:textColor="#17202A"
                         android:layout_marginTop="20dp"
@@ -146,18 +156,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:textSize="20dp"
-                        android:text="Select chapters...."/>
+                        android:textSize="15dp"
+                        android:text="Support this author"/>
+
                     <TextView
                         android:textColor="#17202A"
-                        android:textSize="20dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginLeft="45dp"
+                        android:textSize="15dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Make sure that you don't miss
-any part story"/>
+                        android:text="By sparing a few minutes to watch one ad"/>
+
                     <ImageButton
+                        android:id="@+id/watchad"
                         android:layout_marginLeft="145dp"
                         android:background="@color/colorPrimary"
                         android:layout_width="wrap_content"
@@ -166,7 +178,9 @@ any part story"/>
                         android:src="@mipmap/list"/>
 
                 </LinearLayout>
+
             </LinearLayout>
+
         </ScrollView>
 
 </FrameLayout>

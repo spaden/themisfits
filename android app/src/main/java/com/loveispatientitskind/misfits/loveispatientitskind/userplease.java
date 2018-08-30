@@ -30,10 +30,14 @@ public class userplease extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater=getActivity().getLayoutInflater();
+
         View dialogView=inflater.inflate(R.layout.requestuser,null);
+
         ok=(Button) dialogView.findViewById(R.id.ok);
+
         ok.setOnClickListener(
                 new View.OnClickListener() {
             @Override
@@ -72,6 +76,7 @@ public class userplease extends DialogFragment {
                 Toast.makeText(getContext(),"Unable to connect to the server please turn on your mobile data",Toast.LENGTH_SHORT).show();
             }
         });
+
         queue.add(stringRequest);
     } */
 }

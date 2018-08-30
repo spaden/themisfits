@@ -281,9 +281,9 @@
             <br><br> Then I rolled above her with a reversal, which I learned by watching WWE. She gave me a abyssal look onto me. I was stoned. Suddenly my dad shows up and intervenes us. My dad intervened our personal anguish.
             <br><br> I couldn't do anything. I felt mischief for myself for hurting a girls feelings. Her eyes were almost trembling. She was about to cry.
             <br><br> My dad helped her out and escorted her to the living room. I trailed back of my father after a short time. My dad made her sit in the couch and gave her a glass of water. My mom snuggled around her, since she was crying like a baby.
-            Then after looking back at her I realized what a dreadful thing I have done to her. <br> My dad was angry at me as I can see it in his eyes and the face that he made. But he didn't utter a word. He was quite. I hated this silence. My mom escorted
-            her back to her house.
-            <br><br> Next day was after getting out of the bed. My day was bummed out at me.
+            Then after looking back at her I realized what a dreadful thing I have done to her. <br> My dad was angry at me as I can see it in his eyes and the face that he made. But he didn't utter a word. He remained stoic. I hated this silence. My
+            mom escorted her back to her house.
+            <br><br> Next day, after getting out of my bed my dad was bummed out at me.
             <br><br>
 
             <i>I feel guilty for myself for hurting a girl who took care of me while my parents were out. Now the question is, what to do make to me feel innocent?</i><br><br>
@@ -2431,9 +2431,13 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-
-            <button id="go">Next</button>
+        <div class="row apdme">
+            <br><br> <br><br>
+            <hr>
+            <!--- <button id="go">Next</button>-->
+            <br><br> <br><br>
+            <br>
+            <br>
         </div>
     </div>
 
@@ -2451,7 +2455,8 @@
                 chapt[i] = "chapter " + (i);
             }
             var x = document.getElementById("insert");
-
+            var y = document.getElementById(chapt[0]).innerHTML;
+            x.innerHTML = y;
         };
         var i = 0; //var which = "chapter ";
 
@@ -2470,6 +2475,7 @@
             var y = document.getElementById(chapt[name]).innerHTML;
             he.innerHTML = tites[name];
             x.innerHTML = y;
+
             document.getElementById('strollhere').scrollIntoView();
         }
         document.getElementById("go").onclick = function() {

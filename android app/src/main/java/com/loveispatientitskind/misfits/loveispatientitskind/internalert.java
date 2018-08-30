@@ -11,7 +11,7 @@ public class internalert extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder =new AlertDialog.Builder(getActivity());
-        builder.setMessage("Enter your email and registered mobile number in the above text fields now and click register").setPositiveButton("Ok",
+        builder.setMessage("Enter your email and password in the above text fields now and click register").setPositiveButton("Ok",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -24,4 +24,5 @@ public class internalert extends DialogFragment {
 
        // return super.onCreateDialog(savedInstanceState);
     }
+
 }

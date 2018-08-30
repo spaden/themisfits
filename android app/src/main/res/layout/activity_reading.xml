@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Reading"
     android:background="#78E57D">
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <WebView
         android:id="@+id/webtest"
         android:layout_marginTop="24dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-
     </WebView>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,10 +31,12 @@
         android:padding="40dp"
         android:layout_marginLeft="110dp"
         />
+
     <android.support.v7.widget.Toolbar
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:elevation="10dp"
             android:background="@mipmap/back"
@@ -40,10 +44,11 @@
             android:alpha="0.5"
             android:layout_height="40dp"
             android:id="@+id/back" />
+
         <Button
             android:elevation="10dp"
 
-            android:layout_marginLeft="280dp"
+            android:layout_marginLeft="265dp"
             android:layout_marginRight="10dp"
             android:layout_width="40dp"
             android:alpha="0.5"
@@ -51,15 +56,38 @@
             android:id="@+id/next"
             android:background="@mipmap/next"/>
     </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:alpha="0.78"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="13dp"
-            android:text="                     I wanna be just like me, and be less like you!"/>
+            android:text="             I wanna be just like me, and be less like you!"/>
+
+
     </LinearLayout>
+
 </FrameLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.8"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3329551989027593/7010211198"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.509"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"
+        ads:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
